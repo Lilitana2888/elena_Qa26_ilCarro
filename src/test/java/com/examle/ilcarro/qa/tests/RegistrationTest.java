@@ -1,6 +1,7 @@
 package com.examle.ilcarro.qa.tests;
 
 
+import com.examle.ilcarro.qa.model.User;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -9,7 +10,7 @@ public class RegistrationTest extends TestBase{
     public void testRegistration() throws InterruptedException {
         app.getUserHelper().openRegForm();
         String email =  "my.email" + System.currentTimeMillis() + "@gmail.com";
-        app.getUserHelper().fillRegistrationForm("Elena", "Ro", email, "Aa1234567");
+        app.getUserHelper().fillRegistrationForm(new User().withname("Elena"), "Ro", email, "Aa1234567"));
         app.getUserHelper().selectCheckBox();
         app.getUserHelper().pause(2000);
         app.getUserHelper().clickYallaButton();
@@ -22,7 +23,7 @@ public class RegistrationTest extends TestBase{
     public void testRegistration2() throws InterruptedException {
         app.getUserHelper().openRegForm();
         String email =  "myEmail" + System.currentTimeMillis() + "@yahoo.com";
-        app.getUserHelper().fillRegistrationForm("Elena-Maria", "RoChmaninov", email, "Aa12345677297979789");
+        app.getUserHelper().fillRegistrationForm(new User("Elena-Maria", "RoChmaninov", email, "Aa12345677297979789"));
         app.getUserHelper().selectCheckBox();
         app.getUserHelper().pause(2000);
         app.getUserHelper().clickYallaButton();
@@ -35,7 +36,7 @@ public class RegistrationTest extends TestBase{
     public void testRegistrationNegative() throws InterruptedException {
         app.getUserHelper().openRegForm();
         String email =  "my.email" + System.currentTimeMillis();
-        app.getUserHelper().fillRegistrationForm("Elena", "Ro", email, "Aa1234567");
+        app.getUserHelper().fillRegistrationForm(new User("Elena", "Ro", email, "Aa1234567"));
         app.getUserHelper().selectCheckBox();
         app.getUserHelper().pause(2000);
         app.getUserHelper().clickYallaButton();
