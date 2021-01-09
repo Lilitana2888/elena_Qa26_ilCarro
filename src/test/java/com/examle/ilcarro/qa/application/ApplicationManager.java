@@ -20,7 +20,7 @@ public class ApplicationManager {
     }
 
     public void start() {
-        wd = new ChromeDriver();
+      //  wd = new ChromeDriver();
         if(browser.equals(BrowserType.CHROME)){
             wd = new ChromeDriver();
         }else if(browser.equals(BrowserType.FIREFOX)){
