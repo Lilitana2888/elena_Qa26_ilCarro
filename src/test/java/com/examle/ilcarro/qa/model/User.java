@@ -1,6 +1,6 @@
 package com.examle.ilcarro.qa.model;
 
-import org.testng.util.Strings;
+
 
 public class User {
     private String fName;
@@ -13,17 +13,20 @@ public class User {
         return this;
     }
 
-    public User setfName(String fName) {
+    public User withfName(String fName) {
         this.fName = fName;
         return this;
     }
 
-    public User setlName(String lName) {
+    public User withlName(String lName) {
         this.lName = lName;
         return this;
     }
-
-    public User setPassword(String password) {
+    public User withEmail(String email) {
+        this.email = email;
+        return  this;
+    }
+    public User withPassword(String password) {
         this.password = password;
         return this;
     }
